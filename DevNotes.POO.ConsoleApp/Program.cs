@@ -1,24 +1,40 @@
-﻿Bike hornetBike = new Bike("Hornet", 15000);
+﻿Bike hornetBike = new Bike("Hornet", 15000, 600);
 
-var cbrBike = new Bike("CBR RR", 20000);
-
-Console.WriteLine(hornetBike.Name);
-Console.WriteLine(cbrBike.Name + " " + cbrBike.Price);
 Console.WriteLine(hornetBike.GetInfo());
+Console.WriteLine(hornetBike.SEngine);
 
 public class Bike
 {
+    private decimal _engine;
     public string Name { get; set; }
     public double Price { get; set; }
+    public decimal Engine
+    {
+        get { return _engine; }
+        set
+        {
+            if (value < 0)
+            {
+                value = 0;
+            }
 
-    public Bike(string name, double price)
+            _engine = value;
+        }
+    }
+    public string SEngine
+    {
+        get { return "Cilindrada: " + _engine.ToString(); }
+    }
+
+    public Bike(string name, double price, decimal engine)
     {
         this.Name = name;
         this.Price = price;
+        this.Engine = engine;
     }
 
     public string GetInfo()
     {
-        return $"Modelo: {Name}, Precio: {Price}";
+        return $"Modelo: {Name}, Precio: {Price}, Cilindrada: {Engine}";
     }
 }
