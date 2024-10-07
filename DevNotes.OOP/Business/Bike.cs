@@ -34,5 +34,10 @@
         {
             return $"Modelo: {Name}, Precio: {Price}, Cilindrada: {Engine}";
         }
+
+        public string GetInfo(string message)
+        {
+            return message + " " + GetInfo();
+        }
     }
 }

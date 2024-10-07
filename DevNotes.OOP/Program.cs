@@ -6,3 +6,4 @@ var cbr6 = new InspectionBike("CBR rr", 20000, 600, new DateTime(2027, 10, 08));
 
 Console.WriteLine(hornetBike.GetInfo());
 Console.WriteLine(cbr6.GetInfo());
+Console.WriteLine(cbr6.GetInfo($"Proxima revision: {cbr6.Expiration}"));
