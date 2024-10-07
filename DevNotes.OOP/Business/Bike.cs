@@ -1,11 +1,12 @@
 ﻿namespace DevNotes.OOP.Business
 {
-    public class Bike
+    public class Bike : Vehicle
     {
-        private decimal _engine;
+        private const string Category = "Moto";
+        private double _engine;
         public string Name { get; set; }
         protected double Price { get; set; }
-        public decimal Engine
+        public double Engine
         {
             get { return _engine; }
             set
@@ -23,7 +24,7 @@
             get { return "Cilindrada: " + _engine.ToString(); }
         }
 
-        public Bike(string name, double price, decimal engine)
+        public Bike(string name, double price, double engine, double horsePower) : base(horsePower)
         {
             this.Name = name;
             this.Price = price;
@@ -38,6 +39,11 @@
         public string GetInfo(string message)
         {
             return message + " " + this.GetInfo();
+        }
+
+        public override string GetCategory()
+        {
+            return Category;
         }
     }
 }

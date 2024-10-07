@@ -4,7 +4,7 @@
     {
         public DateTime Expiration { get; set; }
 
-        public InspectionBike(string name, double price, decimal engine, DateTime expiration) : base(name, price, engine)
+        public InspectionBike(string name, double price, double engine, double horsePower, DateTime expiration) : base(name, price, engine, horsePower)
         {
             this.Expiration = expiration;
         }
