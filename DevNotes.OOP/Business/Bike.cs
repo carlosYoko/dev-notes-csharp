@@ -4,7 +4,7 @@
     {
         private decimal _engine;
         public string Name { get; set; }
-        public double Price { get; set; }
+        protected double Price { get; set; }
         public decimal Engine
         {
             get { return _engine; }
