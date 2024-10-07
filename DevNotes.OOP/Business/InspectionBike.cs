@@ -8,5 +8,11 @@
         {
             this.Expiration = expiration;
         }
+
+        public override string GetInfo()
+        {
+            return $"Modelo usado: {base.Name},Cilindrada: {base.Engine}, Precio{base.Price}, Fecha revision: {this.Expiration}";
+        }
+
     }
 }

@@ -30,14 +30,14 @@
             this.Engine = engine;
         }
 
-        public string GetInfo()
+        public virtual string GetInfo()
         {
             return $"Modelo: {Name}, Precio: {Price}, Cilindrada: {Engine}";
         }
 
         public string GetInfo(string message)
         {
-            return message + " " + GetInfo();
+            return message + " " + this.GetInfo();
         }
     }
 }
