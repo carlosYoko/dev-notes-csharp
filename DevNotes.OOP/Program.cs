@@ -1,7 +1,7 @@
 ﻿using DevNotes.OOP.Business;
 
-Bike hornetBike = new Bike("Hornet", 15000, 600, 96.5);
-Console.WriteLine(hornetBike.GetInfo());
+Bike hornet = new Bike("Hornet", 15000, 600, 96.5);
+Console.WriteLine(hornet.GetInfo());
 
 var cbr6 = new InspectionBike("CBR rr", 20000, 600, 120, new DateTime(2027, 10, 08));
 Console.WriteLine(cbr6.GetInfo());
@@ -30,7 +30,7 @@ var service = new Service(100, 21);
 Console.WriteLine(service.GetPrice());
 
 ISalable[] concepts = [
-    hornetBike,
+    hornet,
     cbr6,
     service
     ];
@@ -48,4 +48,29 @@ double GetTotals(ISalable[] concepts)
 
 Console.WriteLine(GetTotals(concepts));
 
-Console.ReadKey();
+var elements = new Collection<int>(3);
+elements.Add(10);
+elements.Add(20);
+elements.Add(309);
+elements.Add(400);
+foreach (int i in elements.Get())
+{
+    Console.WriteLine(i);
+}
+
+var names = new Collection<string>(2);
+names.Add("John");
+names.Add("Carlos");
+foreach (string name in names.Get())
+{
+    Console.WriteLine(name);
+}
+
+var bikes = new Collection<Bike>(2);
+bikes.Add(cbr6);
+bikes.Add(hornet);
+foreach (Bike bike in bikes.Get())
+{
+    Console.WriteLine(bike.Name);
+}
+
