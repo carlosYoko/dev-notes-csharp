@@ -74,3 +74,6 @@ foreach (Bike bike in bikes.Get())
     Console.WriteLine(bike.Name);
 }
 
+Console.WriteLine(Bike.QuantityObjects);
+Console.WriteLine(Operations.Add(22, 11));
+Console.WriteLine(Operations.Mult(5, 10));

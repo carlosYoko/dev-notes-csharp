@@ -6,6 +6,7 @@
         private double _engine;
         public string Name { get; set; }
         protected double Price { get; set; }
+        public static int QuantityObjects;
         public double Engine
         {
             get { return _engine; }
@@ -29,6 +30,7 @@
             this.Name = name;
             this.Price = price;
             this.Engine = engine;
+            QuantityObjects++;
         }
 
         public virtual string GetInfo()
