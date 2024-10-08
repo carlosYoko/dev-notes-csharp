@@ -1,6 +1,6 @@
 ﻿namespace DevNotes.OOP.Business
 {
-    public class Bike : Vehicle
+    public class Bike : Vehicle, ISalable, ISend
     {
         private const string Category = "Moto";
         private double _engine;
@@ -44,6 +44,16 @@
         public override string GetCategory()
         {
             return Category;
+        }
+
+        public double GetPrice()
+        {
+            return Price;
+        }
+
+        public void Send()
+        {
+            Console.WriteLine($"Enviado: {this.GetInfo()}");
         }
     }
 }
