@@ -17,6 +17,11 @@
             new Invoice{Id = 5, TotalInvoice = 134202, VatType = "MOC" },
         };
 
+        public void OrderByVatType(List<Invoice> invoices)
+        {
+            var groupByVatRate = invoices.GroupBy(x => x.VatType).Select(e => e.Count()).ToList();
+        }
+
         public TaxRate HeighestRate(List<TaxRate> taxTypes, List<Invoice> invoices)
         {
             var taxInInvoices = invoices.Select(e => e.VatType).ToList();
