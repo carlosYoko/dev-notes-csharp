@@ -11,3 +11,16 @@ Console.WriteLine(box2.GetContent());
 box2.Set(false);
 Console.WriteLine(box2.GetContent());
 
+var bikeRepository = new BikeRepository();
+bikeRepository.Add("Honda");
+bikeRepository.Add("Yamaha");
+
+Show<string>(bikeRepository);
+
+void Show<T>(IRepository<T> repository)
+{
+    foreach (var bike in repository.GetAll())
+    {
+        Console.WriteLine(bike);
+    }
+}
