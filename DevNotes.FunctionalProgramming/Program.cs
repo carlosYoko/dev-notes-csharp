@@ -1,7 +1,31 @@
-﻿// ##################
+﻿// ###############
+// # Action Type #
+// ###############
+Action<string> sayHello = Console.WriteLine;
+Action<int, int> add = AddTwoNumbers;
+static void AddTwoNumbers(int a, int b)
+{
+    var result = a + b;
+}
+
+sayHello("Hello World");
+add(2, 2);
+
+// #####################
+// # Lambda expression #
+// #####################
+Action<string> hi = name => Console.WriteLine($"Hello {name}");
+hi("Carlos");
+
+Action<string> show = Console.WriteLine;
+
+Action<int, int> addNumbers = (a, b) => show((a + b).ToString());
+addNumbers(2, 2);
+
+
+// ##################
 // # Pure functions #
 // ##################
-
 // No pure functions
 DateTime Tomorrow()
 {
@@ -34,22 +58,3 @@ public class Client
 {
     public string Name { get; set; }
 }
-
-
-// ###############
-// # Action Type #
-// ###############
-public class ActionType
-{
-    Action<string> show = Console.WriteLine;
-    Action<int, int> add = AddTwoNumbers;
-
-    public static void AddTwoNumbers(int a, int b)
-    {
-        var result = a + b;
-    }
-}
-
-// Para ejecutar:
-// show("Hello World");
-// add(2, 2)
