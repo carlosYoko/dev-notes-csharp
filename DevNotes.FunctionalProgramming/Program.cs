@@ -73,7 +73,7 @@ List<int> FilterHO(List<int> list, Func<int, bool> condition)
     return result;
 }
 
-Console.WriteLine();
+
 // ##################
 // # Pure functions #
 // ##################
