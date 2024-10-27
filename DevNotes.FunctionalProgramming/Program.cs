@@ -36,15 +36,15 @@ Func<int, int, string> mulString = (a, b) =>
  };
 show(mulString(4, 4));
 
-
-// ##########################
-// # Higher Order Functions #
-// ##########################
+// ##################
+// # Predicate Type #
+// ##################
+Predicate<int> condition = x => x % 2 == 0;
+Predicate<int> condition2 = x => x < 3;
 List<int> list = [1, 2, 3, 4, 5, 6];
-var listFiltered = Filter(list, n => n % 2 == 0);
-var listFiltered2 = Filter(list, n => n > 3);
-
-List<int> Filter(List<int> list, Func<int, bool> condition)
+var listFiltered = FilterPredicate(list, condition);
+var listFiltered2 = FilterPredicate(list, condition2);
+List<int> FilterPredicate(List<int> list, Predicate<int> condition)
 {
     var result = new List<int>();
     foreach (int i in list)
@@ -55,7 +55,25 @@ List<int> Filter(List<int> list, Func<int, bool> condition)
     return result;
 }
 
+// ##########################
+// # Higher Order Functions #
+// ##########################
+List<int> list2 = [1, 2, 3, 4, 5, 6];
+var list2Filtered = FilterHO(list2, n => n % 2 == 0);
+var list2Filtered2 = FilterHO(list2, n => n > 3);
 
+List<int> FilterHO(List<int> list, Func<int, bool> condition)
+{
+    var result = new List<int>();
+    foreach (int i in list)
+    {
+        if (condition(i)) result.Add(i);
+    }
+
+    return result;
+}
+
+Console.WriteLine();
 // ##################
 // # Pure functions #
 // ##################
